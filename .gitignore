@@ -62,3 +62,6 @@ typings/
 
 # dist
 dist/
+
+#system
+.DS_Store
