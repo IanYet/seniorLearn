@@ -15,6 +15,7 @@
 - - html5直接嵌入
 - - `<object data="image.svg" type="image/svg+xml" />`
 - - `<iframe src="image.svg"></iframe>`
+- - - iframe 默认高度300*150
 - - `<embed src="01.svg" type="image/svg+xml" />`
 - - `<img src="01.svg" />`
 - - js动态注入
