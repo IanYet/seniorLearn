@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>shadow-dom</title>
+</head>
+<body>
+    <select name="sel" id="sel">
+        <option value="0">apple</option>
+        <option value="1">bananar</option>
+    </select>
+
+    <div id="div"></div>
+    <template id="list">
+        <div>
+            <h1>Others</h1>
+            <slot></slot>
+        </div>
+        <div>
+            <h1>Animals</h1>
+            <slot name="animal"></slot>
+        </div>
+        <div>
+            <h1>Fruits</h1>
+            <slot name="fruit"></slot>
+        </div>
+    </template>
+    <my-list>
+        <div slot="animal">Cat</div>
+        <div slot="fruit">Apple</div>
+        <div slot="fruit">Banana</div>
+        <div slot="other">flower</div>
+        <div>pencil</div>
+        <div slot="animal">Dog</div>
+        <div slot="fruit">peach</div>
+        <div>red</div>
+    </my-list>
+        
+
+    <script>
+        class MyList extends HTMLElement {
+            constructor() {
+                super();
+                const root = this.attachShadow({ mode: 'open' });
+                const template = document.getElementById('list');
+                root.appendChild(document.importNode(template.content, true));
+            }
+        }
+        customElements.define('my-list', MyList);
+    </script>
+</body>
+</html>
