@@ -38,9 +38,9 @@ class BinarySearchTree {
             callback(node)
             return this
         } else if (node.key < key) {
-            return this.search(key, callback ,node.right)
+            return this.search(key, callback, node.right)
         } else if (node.key > key) {
-            return this.search(key, callback,  node.left)
+            return this.search(key, callback, node.left)
         }
     }
     inOrderTraverse(
@@ -94,7 +94,7 @@ class BinarySearchTree {
     }
     remove(key) {
         const removeNode = node => {
-            console.log('node');
+            console.log('node')
             if (!node.is) {
                 console.log(false)
             } else if (!node.left.is && !node.right.is) {
@@ -106,7 +106,7 @@ class BinarySearchTree {
             } else {
                 const midKey = null
                 this.max(node.left, node => {
-                    console.log(`max: ${node.key}`);
+                    console.log(`max: ${node.key}`)
                     midKey = node.key
                     Object.assign(node, {})
                 })
