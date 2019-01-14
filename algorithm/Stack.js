@@ -24,4 +24,4 @@ class Stack {
         console.log(this._item)
     }
 }
-module.exports = () => new Stack()
+module.exports = Stack

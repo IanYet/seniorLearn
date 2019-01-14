@@ -35,3 +35,5 @@ class Dictionary {
         console.log(this.items);
     }
 }
+
+module.exports = Dictionary

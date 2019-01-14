@@ -24,4 +24,4 @@ class Queue {
         console.log(this._item)
     }
 }
-module.exports = () => new Queue()
+module.exports = Queue
